@@ -1,22 +1,29 @@
 var game = new Phaser.Game(800, 600, Phaser.Auto, '', {
     preload: preload,
     create: create,
-    update: update
+    update: update,
+    render: render
 });
 var style, cursors, speedX = 150,
     speedY = 150,
     vectorX = 1,
     vectorY = 1,
     angularMovement = 5,
-    currentNumber = 1;
+    currentNumber = 1
+    score = 0;
 
 function preload() {
-    game.load.image('ball', '/assets/games/football.png');
-    game.load.image('goal', '/assets/games/goal.png');
+    game.load.image('ball', 'assets/games/football.png');
+    game.load.image('goal', 'assets/games/goal.png');
+
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 }
 
 function create() {
-    game.stage.backgroundColor = '#111111';
+    //go full screen on mobile device
+    if(!game.device.desktop){game.input.onDown.add(gofull, this);}
+    game.stage.backgroundColor = '#11aa11';
     game.physics.startSystem(Phaser.Physics.ARCADE);
     cursors = game.input.keyboard.createCursorKeys();
 
@@ -30,6 +37,17 @@ function create() {
     ball.scale.setTo(0.1, 0.1);
     ball.anchor.setTo(0.5, 0.5);
 
+    game.input.addPointer();
+
+    game.input.onUp.add(function() {
+      console.log('UP');
+    });
+    game.input.onDown.add(function() {
+      console.log('DOWN');
+    });
+    game.input.onTap.add(function() {
+      console.log('TAP');
+    });
 
 }
 
@@ -61,25 +79,44 @@ function playerUpdate() {
     game.physics.arcade.overlap(goal, ball, handleOverlap, null, this);
     
     if (cursors.left.isDown) {
-        ball.body.velocity.setTo(-200, 0);
-        angularMovement = -5;
+        moveLeft();
     } else if (cursors.right.isDown) {
-        ball.body.velocity.setTo(200, 0);
-        angularMovement = 5;
+        moveRight();
     } else if (cursors.up.isDown) {
-        ball.body.velocity.setTo(0, -200);
-        angularMovement = -5;
+        moveUp();
     } else if (cursors.down.isDown) {
-        ball.body.velocity.setTo(0, 200);
-        angularMovement = 5;
+        moveDown();
     }
-    ball.angle += angularMovement;
+}
+
+function moveLeft(){
+    ball.body.velocity.setTo(-200, 0);
+    ball.angle -= 5;
+}
+
+function moveRight(){
+    ball.body.velocity.setTo(200, 0);
+    ball.angle += 5;
+}
+
+function moveUp(){
+    ball.body.velocity.setTo(0, -200);
+    ball.angle -= 5;
+}
+
+function moveDown(){
+    ball.body.velocity.setTo(0, 200);
+    ball.angle += 5;
 }
 
 function handleOverlap(){
-    console.log('overlap');
+    //console.log('overlap');
     goal.destroy();
     text.destroy();
     currentNumber++;
     createTarget();
+}
+
+function render(){
+    game.debug.pointer(game.input.mousepointer);
 }
