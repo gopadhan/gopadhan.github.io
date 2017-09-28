@@ -13,8 +13,8 @@ var style, cursors, speedX = 150,
     score = 0;
 
 function preload() {
-    game.load.image('ball', 'assets/games/football.png');
-    game.load.image('goal', 'assets/games/goal.png');
+    game.load.image('ball', '/assetsgames/football.png');
+    game.load.image('goal', '/assets/games/goal.png');
 
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
