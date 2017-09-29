@@ -58,8 +58,8 @@ Splash.prototype = {
 
   addGameStates: function () {
 
-    game.state.add("GameMenu",GameMenu);
-    game.state.add("GameStart",GameStart);
+    game.state.add("GameMenu",gamemenu);
+    game.state.add("GameStart",gamestart);
     //game.state.add("GameOver",GameOver);
     //game.state.add("Options",Options);
   },
