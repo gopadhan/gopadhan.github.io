@@ -9,8 +9,8 @@ var Splash = function () {};
 Splash.prototype = {
 
   loadScripts: function () {
-    game.load.script('gamemenu','GameMenu.js');
-    game.load.script('gamestart', 'gamestart.js');
+    game.load.script('gamemenu','gamejs/GameMenu.js');
+    game.load.script('gamestart', 'gamejs/gamestart.js');
     //game.load.script('common', 'gamejs/lib/common.js');
     //game.load.script('gameover','gamejs/states/GameOver.js');
     //game.load.script('options', 'gamejs/states/Options.js');
