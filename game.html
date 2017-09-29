@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="assets/images/engine-logo-128x128.png" type="image/x-icon">
-    <meta name="description" content="">
-    <title>Game 1</title>
-    <script src="assets\games\phaser.min.js"></script>
-    <script src="assets\games\game.js"></script>
-    
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="assets/tether/tether.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="assets/dropdown/css/style.css">
-    <link rel="stylesheet" href="assets/socicon/css/styles.css">
-    <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="HandheldFriendly" content="true" />		
+    <meta name="mobile-web-app-capable" content="yes" />
+    <style type="text/css">
+         body{
+              padding:0px;
+              margin:0px;
+              background: #020028;
+         }
+    </style>
+        
+    <title>Phaser GoPaDhan Template</title>
 </head>
-
 <body>
+    <main id="game"></main>
+    <!--Rather than loading all of our assets in script tags, lets just load the minimum. 
+        So it looks like we only need phaser.js and main.js. The benefit is that we can 
+        actually have the engine start up much sooner. This way, the users don't have to
+        wait so long before being greeted with the splash screen-->
 
+    <script type="text/javascript" src="gamejs/vendor/phaser.js"></script>
+    <script type="text/javascript" src="gamejs/main.js"></script>    
 </body>
-
-
 </html>
