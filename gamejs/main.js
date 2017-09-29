@@ -38,10 +38,7 @@ main.prototype = {
       game.scale.setScreenSize = true;
       game.scale.pageAlignHorizontally = true;
       game.scale.pageAlignVertically = true;
-      game.stage.backgroundColor = "#020028";
-      game.load.script('splash',  'gamejs/Splash.js');
-      game.load.script('gamemenu','gamejs/gamemenu.js');
-      game.load.script('gamestart', 'gamejs/gamestart.js');	    
+      game.stage.backgroundColor = "#020028";	    
       game.load.image('loading',  'gameassets/images/loading.png');
 	    game.load.image('brand',    'gameassets/images/logo.png');
       
