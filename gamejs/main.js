@@ -39,7 +39,7 @@ main.prototype = {
       game.scale.pageAlignHorizontally = true;
       game.scale.pageAlignVertically = true;
       game.stage.backgroundColor = "#020028";
-      game.load.script('splash',  'gamejs/states/Splash.js');
+      game.load.script('splash',  'Splash.js');
       game.load.image('loading',  'gameassets/images/loading.png');
 	    game.load.image('brand',    'gameassets/images/logo.png');
       
