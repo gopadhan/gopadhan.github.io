@@ -58,8 +58,8 @@ Splash.prototype = {
 
   addGameStates: function () {
 
-    game.state.add("GameMenu",gamemenu);
-    game.state.add("GameStart",gamestart);
+    game.state.add('gamemenu',gamemenu);
+    game.state.add('gamestart',gamestart);
     //game.state.add("GameOver",GameOver);
     //game.state.add("Options",Options);
   },
@@ -76,7 +76,7 @@ Splash.prototype = {
     this.addGameStates();
     this.addGameMusic();
 
-    setTimeout(function () {game.state.start("GameMenu");}, 1000);
+    setTimeout(function () {game.state.start('gamemenu');}, 1000);
 
   }
 };
